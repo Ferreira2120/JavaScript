@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curso js</title>
+  </head>
+  <body>
+    <h1 id="title1">Curso Javascript Completo 2018</h1>
+    <main class="cmain" id="idmain">
+      <h2>subtitulo</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid sit
+        repudiandae tenetur mollitia facilis rerum sapiente molestiae ipsam
+        nostrum possimus! Vitae aliquid nostrum facilis, a veritatis aspernatur
+        amet esse consectetur?
+      </p>
+    </main>
+
+    <form action="#">
+      <input type="text" id="txtNome" placeholder="Nome" /><br />
+      <input
+        type="text"
+        id="txtEmail"
+        placeholder="Email"
+        class="inputEmail"
+      /><br /><br />
+      <div id="newsletterFeedback"></div>
+      <div id="newsletterFeedback2"></div>
+      <br /><br />
+
+      <input type="checkbox" id="contrato" onclick="liberarCadsatro()" />
+      <label for="contrato">Li e aceito contrato</label><br /><br />
+      <textarea name="" id="" cols="30" rows="10" readonly>
+        este contrato... </textarea
+      >
+      <br /><br />
+      <input type="submit" value="cadastrar" onclick="msgChecar()" />
+    </form>
+
+    <script>
+      const btn = document.querySelector('form input[type="submit"]');
+      btn.disabled = true;
+      function liberarCadsatro() {
+        const checarCheckbox = document.querySelector("#contrato");
+
+        let checked = checarCheckbox.checked;
+        console.log(checked);
+
+        // if (checked) {
+        //   btn.disabled = false;
+        // } else {
+        //   btn.disabled = true;
+        // }
+        //a mesma coisa do if
+        btn.disabled = !checked;
+      }
+      const txtNome = document.querySelector("#txtNome");
+      const txtEmail = document.querySelector("#txtEmail");
+      const msgtrueCdtrEm = document.querySelector("#newsletterFeedback");
+
+      function msgChecar() {
+        if ((txtNome === undefined, txtEmail === undefined)) {
+          throw Error("Insira seu nome e seu emil");
+        }
+        let Email = txtEmail.value;
+        let Nome = txtNome.value;
+        msgtrueCdtrEm.innerHTML = `O Email é ${Email} e o seu Nome é ${Nome}`;
+      }
+    </script>
+  </body>
+</html>
